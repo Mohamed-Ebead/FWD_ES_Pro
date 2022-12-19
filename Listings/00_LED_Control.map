@@ -4,8 +4,12 @@ Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
 
 Section Cross References
 
+    main.o(.text.main) refers to sys_program.o(.text.SYSCTRL_GPIO_CLK_EN) for SYSCTRL_GPIO_CLK_EN
     main.o(.text.main) refers to led_program.o(.text.LED_Init) for LED_Init
     main.o(.text.main) refers to systick_program.o(.text.SYSTICK_Init) for SYSTICK_Init
+    main.o(.text.main) refers to button_program.o(.text.SW1_Init) for SW1_Init
+    main.o(.text.main) refers to button_program.o(.text.SW2_Init) for SW2_Init
+    main.o(.text.main) refers to nvic_program.o(.text.NVIC_vidSetInterrupt) for NVIC_vidSetInterrupt
     main.o(.text.main) refers to systick_program.o(.text.SYSTICK_GetCurrentValue) for SYSTICK_GetCurrentValue
     main.o(.text.main) refers to led_program.o(.text.LED_TurnON) for LED_TurnON
     main.o(.text.main) refers to led_program.o(.text.LED_TurnOFF) for LED_TurnOFF
@@ -40,12 +44,63 @@ Section Cross References
     gpio_program.o(.ARM.exidx.text.GPIO_SetPinDirection) refers to gpio_program.o(.text.GPIO_SetPinDirection) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.GPIO_SetPinValue) refers to gpio_program.o(.text.GPIO_SetPinValue) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.GPIO_GetPinValue) refers to gpio_program.o(.text.GPIO_GetPinValue) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_Config_PUR) refers to gpio_program.o(.text.GPIO_Config_PUR) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_SelectInterruptSense) refers to gpio_program.o(.text.GPIO_SelectInterruptSense) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_EnableInterrupt) refers to gpio_program.o(.text.GPIO_EnableInterrupt) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_SelectInterruptEvent) refers to gpio_program.o(.text.GPIO_SelectInterruptEvent) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_InterruptEdges) refers to gpio_program.o(.text.GPIO_InterruptEdges) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_ClearInterrupt) refers to gpio_program.o(.text.GPIO_ClearInterrupt) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_u8GetInterruptStatus) refers to gpio_program.o(.text.GPIO_u8GetInterruptStatus) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_Unlock) refers to gpio_program.o(.text.GPIO_Unlock) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_Lock) refers to gpio_program.o(.text.GPIO_Lock) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.GPIO_Commit) refers to gpio_program.o(.text.GPIO_Commit) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_SetCallBack) refers to gpio_program.o(.bss.GPIOF_CallBack) for GPIOF_CallBack
+    gpio_program.o(.ARM.exidx.text.GPIO_SetCallBack) refers to gpio_program.o(.text.GPIO_SetCallBack) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIOF_Handler) refers to gpio_program.o(.bss.GPIOF_CallBack) for GPIOF_CallBack
+    gpio_program.o(.ARM.exidx.text.GPIOF_Handler) refers to gpio_program.o(.text.GPIOF_Handler) for [Anonymous Symbol]
+    button_program.o(.ARM.exidx.text.delay_ms) refers to button_program.o(.text.delay_ms) for [Anonymous Symbol]
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_Unlock) for GPIO_Unlock
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_Commit) for GPIO_Commit
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_Lock) for GPIO_Lock
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_SetPinDirection) for GPIO_SetPinDirection
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_SetPinDigitalEnable) for GPIO_SetPinDigitalEnable
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_Config_PUR) for GPIO_Config_PUR
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_SelectInterruptSense) for GPIO_SelectInterruptSense
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_InterruptEdges) for GPIO_InterruptEdges
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_SelectInterruptEvent) for GPIO_SelectInterruptEvent
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_ClearInterrupt) for GPIO_ClearInterrupt
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_EnableInterrupt) for GPIO_EnableInterrupt
+    button_program.o(.text.SW1_Init) refers to button_program.o(.text.vidProcessButtons) for vidProcessButtons
+    button_program.o(.text.SW1_Init) refers to gpio_program.o(.text.GPIO_SetCallBack) for GPIO_SetCallBack
+    button_program.o(.ARM.exidx.text.SW1_Init) refers to button_program.o(.text.SW1_Init) for [Anonymous Symbol]
+    button_program.o(.text.vidProcessButtons) refers to gpio_program.o(.text.GPIO_u8GetInterruptStatus) for GPIO_u8GetInterruptStatus
+    button_program.o(.text.vidProcessButtons) refers to gpio_program.o(.text.GPIO_ClearInterrupt) for GPIO_ClearInterrupt
+    button_program.o(.ARM.exidx.text.vidProcessButtons) refers to button_program.o(.text.vidProcessButtons) for [Anonymous Symbol]
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_Unlock) for GPIO_Unlock
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_Commit) for GPIO_Commit
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_Lock) for GPIO_Lock
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_SetPinDirection) for GPIO_SetPinDirection
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_SetPinDigitalEnable) for GPIO_SetPinDigitalEnable
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_Config_PUR) for GPIO_Config_PUR
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_SelectInterruptSense) for GPIO_SelectInterruptSense
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_InterruptEdges) for GPIO_InterruptEdges
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_SelectInterruptEvent) for GPIO_SelectInterruptEvent
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_ClearInterrupt) for GPIO_ClearInterrupt
+    button_program.o(.text.SW2_Init) refers to gpio_program.o(.text.GPIO_EnableInterrupt) for GPIO_EnableInterrupt
+    button_program.o(.ARM.exidx.text.SW2_Init) refers to button_program.o(.text.SW2_Init) for [Anonymous Symbol]
+    sys_program.o(.ARM.exidx.text.SYSCTRL_GPIO_CLK_EN) refers to sys_program.o(.text.SYSCTRL_GPIO_CLK_EN) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_vidSetInterrupt) refers to nvic_program.o(.text.NVIC_vidSetInterrupt) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_vidClearInterrupt) refers to nvic_program.o(.text.NVIC_vidClearInterrupt) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_vidSetPending) refers to nvic_program.o(.text.NVIC_vidSetPending) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_vidClearPending) refers to nvic_program.o(.text.NVIC_vidClearPending) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_vidSetPriority) refers to nvic_program.o(.text.NVIC_vidSetPriority) for [Anonymous Symbol]
     startup_tm4c123.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_tm4c123.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_tm4c123.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_tm4c123.o(RESET) refers to startup_tm4c123.o(STACK) for __initial_sp
     startup_tm4c123.o(RESET) refers to startup_tm4c123.o(.text) for Reset_Handler
     startup_tm4c123.o(RESET) refers to systick_program.o(.text.SysTick_Handler) for SysTick_Handler
+    startup_tm4c123.o(RESET) refers to gpio_program.o(.text.GPIOF_Handler) for GPIOF_Handler
     startup_tm4c123.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_tm4c123.o(.text) refers to system_tm4c123.o(.text.SystemInit) for SystemInit
     startup_tm4c123.o(.text) refers to __main.o(!!!main) for __main
@@ -198,6 +253,36 @@ Removing Unused input sections from the image.
     Removing gpio_program.o(.ARM.exidx.text.GPIO_SetPinValue), (8 bytes).
     Removing gpio_program.o(.text.GPIO_GetPinValue), (84 bytes).
     Removing gpio_program.o(.ARM.exidx.text.GPIO_GetPinValue), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_Config_PUR), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_SelectInterruptSense), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_EnableInterrupt), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_SelectInterruptEvent), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_InterruptEdges), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_ClearInterrupt), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_u8GetInterruptStatus), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_Unlock), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_Lock), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_Commit), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIO_SetCallBack), (8 bytes).
+    Removing gpio_program.o(.ARM.exidx.text.GPIOF_Handler), (8 bytes).
+    Removing button_program.o(.text), (0 bytes).
+    Removing button_program.o(.text.delay_ms), (62 bytes).
+    Removing button_program.o(.ARM.exidx.text.delay_ms), (8 bytes).
+    Removing button_program.o(.ARM.exidx.text.SW1_Init), (8 bytes).
+    Removing button_program.o(.ARM.exidx.text.vidProcessButtons), (8 bytes).
+    Removing button_program.o(.ARM.exidx.text.SW2_Init), (8 bytes).
+    Removing sys_program.o(.text), (0 bytes).
+    Removing sys_program.o(.ARM.exidx.text.SYSCTRL_GPIO_CLK_EN), (8 bytes).
+    Removing nvic_program.o(.text), (0 bytes).
+    Removing nvic_program.o(.ARM.exidx.text.NVIC_vidSetInterrupt), (8 bytes).
+    Removing nvic_program.o(.text.NVIC_vidClearInterrupt), (104 bytes).
+    Removing nvic_program.o(.ARM.exidx.text.NVIC_vidClearInterrupt), (8 bytes).
+    Removing nvic_program.o(.text.NVIC_vidSetPending), (104 bytes).
+    Removing nvic_program.o(.ARM.exidx.text.NVIC_vidSetPending), (8 bytes).
+    Removing nvic_program.o(.text.NVIC_vidClearPending), (104 bytes).
+    Removing nvic_program.o(.ARM.exidx.text.NVIC_vidClearPending), (8 bytes).
+    Removing nvic_program.o(.text.NVIC_vidSetPriority), (34 bytes).
+    Removing nvic_program.o(.ARM.exidx.text.NVIC_vidSetPriority), (8 bytes).
     Removing system_tm4c123.o(.text), (0 bytes).
     Removing system_tm4c123.o(.text.SystemCoreClockUpdate), (326 bytes).
     Removing system_tm4c123.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
@@ -206,7 +291,7 @@ Removing Unused input sections from the image.
     Removing system_tm4c123.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_tm4c123.o(.data.SystemCoreClock), (4 bytes).
 
-37 unused section(s) (total 1036 bytes) removed from the image.
+67 unused section(s) (total 1620 bytes) removed from the image.
 
 ==============================================================================
 
@@ -245,6 +330,7 @@ Image Symbol Table
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/irq.c                            0x00000000   Number         0  irqnopfx.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
@@ -266,9 +352,12 @@ Image Symbol Table
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    BUTTON_program.c                         0x00000000   Number         0  button_program.o ABSOLUTE
     GPIO_program.c                           0x00000000   Number         0  gpio_program.o ABSOLUTE
     LED_program.c                            0x00000000   Number         0  led_program.o ABSOLUTE
+    NVIC_program.c                           0x00000000   Number         0  nvic_program.o ABSOLUTE
     RTE/Device/TM4C123GH6PM/startup_TM4C123.s 0x00000000   Number         0  startup_tm4c123.o ABSOLUTE
+    SYS_program.c                            0x00000000   Number         0  sys_program.o ABSOLUTE
     SysTick_program.c                        0x00000000   Number         0  systick_program.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
@@ -329,27 +418,46 @@ Image Symbol Table
     .text                                    0x0000047c   Section        2  use_no_semi.o(.text)
     .text                                    0x0000047e   Section        0  indicate_semi.o(.text)
     [Anonymous Symbol]                       0x00000480   Section        0  gpio_program.o(.text.GPIOF_CLK_EN)
-    [Anonymous Symbol]                       0x00000494   Section        0  gpio_program.o(.text.GPIO_SetPinDigitalEnable)
-    [Anonymous Symbol]                       0x00000508   Section        0  gpio_program.o(.text.GPIO_SetPinDirection)
-    [Anonymous Symbol]                       0x0000057c   Section        0  gpio_program.o(.text.GPIO_SetPinValue)
-    [Anonymous Symbol]                       0x000005f0   Section        0  led_program.o(.text.LED_Init)
-    [Anonymous Symbol]                       0x00000618   Section        0  led_program.o(.text.LED_TurnOFF)
-    [Anonymous Symbol]                       0x00000628   Section        0  led_program.o(.text.LED_TurnON)
-    SYSTICK_CLK_EN                           0x00000639   Thumb Code    18  systick_program.o(.text.SYSTICK_CLK_EN)
-    [Anonymous Symbol]                       0x00000638   Section        0  systick_program.o(.text.SYSTICK_CLK_EN)
-    [Anonymous Symbol]                       0x0000064c   Section        0  systick_program.o(.text.SYSTICK_GetCurrentValue)
-    [Anonymous Symbol]                       0x00000658   Section        0  systick_program.o(.text.SYSTICK_INT_DIS)
-    [Anonymous Symbol]                       0x0000066c   Section        0  systick_program.o(.text.SYSTICK_Init)
-    [Anonymous Symbol]                       0x00000688   Section        0  systick_program.o(.text.SYSTICK_Reload)
-    [Anonymous Symbol]                       0x0000069c   Section        0  systick_program.o(.text.SYSTICK_Start)
-    [Anonymous Symbol]                       0x000006b0   Section        0  systick_program.o(.text.SysTick_Handler)
-    [Anonymous Symbol]                       0x000006c0   Section        0  system_tm4c123.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000007cc   Section        0  main.o(.text.main)
-    $v0                                      0x00000812   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x00000812   Section       26  fpinit.o(x$fpl$fpinit)
+    [Anonymous Symbol]                       0x00000494   Section        0  gpio_program.o(.text.GPIOF_Handler)
+    [Anonymous Symbol]                       0x000004a4   Section        0  gpio_program.o(.text.GPIO_ClearInterrupt)
+    [Anonymous Symbol]                       0x000004f0   Section        0  gpio_program.o(.text.GPIO_Commit)
+    [Anonymous Symbol]                       0x0000053c   Section        0  gpio_program.o(.text.GPIO_Config_PUR)
+    [Anonymous Symbol]                       0x000005b0   Section        0  gpio_program.o(.text.GPIO_EnableInterrupt)
+    [Anonymous Symbol]                       0x000005fc   Section        0  gpio_program.o(.text.GPIO_InterruptEdges)
+    [Anonymous Symbol]                       0x00000670   Section        0  gpio_program.o(.text.GPIO_Lock)
+    [Anonymous Symbol]                       0x000006ac   Section        0  gpio_program.o(.text.GPIO_SelectInterruptEvent)
+    [Anonymous Symbol]                       0x00000720   Section        0  gpio_program.o(.text.GPIO_SelectInterruptSense)
+    [Anonymous Symbol]                       0x00000794   Section        0  gpio_program.o(.text.GPIO_SetCallBack)
+    [Anonymous Symbol]                       0x000007b8   Section        0  gpio_program.o(.text.GPIO_SetPinDigitalEnable)
+    [Anonymous Symbol]                       0x0000082c   Section        0  gpio_program.o(.text.GPIO_SetPinDirection)
+    [Anonymous Symbol]                       0x000008a0   Section        0  gpio_program.o(.text.GPIO_SetPinValue)
+    [Anonymous Symbol]                       0x00000914   Section        0  gpio_program.o(.text.GPIO_Unlock)
+    [Anonymous Symbol]                       0x00000954   Section        0  gpio_program.o(.text.GPIO_u8GetInterruptStatus)
+    [Anonymous Symbol]                       0x000009a8   Section        0  led_program.o(.text.LED_Init)
+    [Anonymous Symbol]                       0x000009d0   Section        0  led_program.o(.text.LED_TurnOFF)
+    [Anonymous Symbol]                       0x000009e0   Section        0  led_program.o(.text.LED_TurnON)
+    [Anonymous Symbol]                       0x000009f0   Section        0  nvic_program.o(.text.NVIC_vidSetInterrupt)
+    [Anonymous Symbol]                       0x00000a58   Section        0  button_program.o(.text.SW1_Init)
+    [Anonymous Symbol]                       0x00000ad4   Section        0  button_program.o(.text.SW2_Init)
+    [Anonymous Symbol]                       0x00000b44   Section        0  sys_program.o(.text.SYSCTRL_GPIO_CLK_EN)
+    SYSTICK_CLK_EN                           0x00000bd5   Thumb Code    18  systick_program.o(.text.SYSTICK_CLK_EN)
+    [Anonymous Symbol]                       0x00000bd4   Section        0  systick_program.o(.text.SYSTICK_CLK_EN)
+    [Anonymous Symbol]                       0x00000be8   Section        0  systick_program.o(.text.SYSTICK_GetCurrentValue)
+    [Anonymous Symbol]                       0x00000bf4   Section        0  systick_program.o(.text.SYSTICK_INT_DIS)
+    [Anonymous Symbol]                       0x00000c08   Section        0  systick_program.o(.text.SYSTICK_Init)
+    [Anonymous Symbol]                       0x00000c24   Section        0  systick_program.o(.text.SYSTICK_Reload)
+    [Anonymous Symbol]                       0x00000c38   Section        0  systick_program.o(.text.SYSTICK_Start)
+    [Anonymous Symbol]                       0x00000c4c   Section        0  systick_program.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x00000c5c   Section        0  system_tm4c123.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00000d68   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000dcc   Section        0  button_program.o(.text.vidProcessButtons)
+    $v0                                      0x00000e02   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x00000e02   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
     CallBack                                 0x20000060   Data           4  systick_program.o(.bss.CallBack)
     [Anonymous Symbol]                       0x20000060   Section        0  systick_program.o(.bss.CallBack)
+    GPIOF_CallBack                           0x20000064   Data           4  gpio_program.o(.bss.GPIOF_CallBack)
+    [Anonymous Symbol]                       0x20000064   Section        0  gpio_program.o(.bss.GPIOF_CallBack)
     Heap_Mem                                 0x20000068   Data           0  startup_tm4c123.o(HEAP)
     Stack_Mem                                0x20000068   Data         512  startup_tm4c123.o(STACK)
     HEAP                                     0x20000068   Section        0  startup_tm4c123.o(HEAP)
@@ -480,7 +588,6 @@ Image Symbol Table
     COMP2_Handler                            0x00000341   Thumb Code     2  startup_tm4c123.o(.text)
     SYSCTL_Handler                           0x00000343   Thumb Code     2  startup_tm4c123.o(.text)
     FLASH_Handler                            0x00000345   Thumb Code     2  startup_tm4c123.o(.text)
-    GPIOF_Handler                            0x00000347   Thumb Code     2  startup_tm4c123.o(.text)
     GPIOG_Handler                            0x00000349   Thumb Code     2  startup_tm4c123.o(.text)
     GPIOH_Handler                            0x0000034b   Thumb Code     2  startup_tm4c123.o(.text)
     UART2_Handler                            0x0000034d   Thumb Code     2  startup_tm4c123.o(.text)
@@ -572,25 +679,42 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x0000047d   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x0000047f   Thumb Code     0  indicate_semi.o(.text)
     GPIOF_CLK_EN                             0x00000481   Thumb Code    18  gpio_program.o(.text.GPIOF_CLK_EN)
-    GPIO_SetPinDigitalEnable                 0x00000495   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinDigitalEnable)
-    GPIO_SetPinDirection                     0x00000509   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinDirection)
-    GPIO_SetPinValue                         0x0000057d   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinValue)
-    LED_Init                                 0x000005f1   Thumb Code    38  led_program.o(.text.LED_Init)
-    LED_TurnOFF                              0x00000619   Thumb Code    14  led_program.o(.text.LED_TurnOFF)
-    LED_TurnON                               0x00000629   Thumb Code    14  led_program.o(.text.LED_TurnON)
-    SYSTICK_GetCurrentValue                  0x0000064d   Thumb Code    12  systick_program.o(.text.SYSTICK_GetCurrentValue)
-    SYSTICK_INT_DIS                          0x00000659   Thumb Code    18  systick_program.o(.text.SYSTICK_INT_DIS)
-    SYSTICK_Init                             0x0000066d   Thumb Code    28  systick_program.o(.text.SYSTICK_Init)
-    SYSTICK_Reload                           0x00000689   Thumb Code    20  systick_program.o(.text.SYSTICK_Reload)
-    SYSTICK_Start                            0x0000069d   Thumb Code    18  systick_program.o(.text.SYSTICK_Start)
-    SysTick_Handler                          0x000006b1   Thumb Code    16  systick_program.o(.text.SysTick_Handler)
-    SystemInit                               0x000006c1   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
-    main                                     0x000007cd   Thumb Code    70  main.o(.text.main)
-    _fp_init                                 0x00000813   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0000082b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0000082b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x0000082c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000083c   Number         0  anon$$obj.o(Region$$Table)
+    GPIOF_Handler                            0x00000495   Thumb Code    16  gpio_program.o(.text.GPIOF_Handler)
+    GPIO_ClearInterrupt                      0x000004a5   Thumb Code    74  gpio_program.o(.text.GPIO_ClearInterrupt)
+    GPIO_Commit                              0x000004f1   Thumb Code    74  gpio_program.o(.text.GPIO_Commit)
+    GPIO_Config_PUR                          0x0000053d   Thumb Code   116  gpio_program.o(.text.GPIO_Config_PUR)
+    GPIO_EnableInterrupt                     0x000005b1   Thumb Code    74  gpio_program.o(.text.GPIO_EnableInterrupt)
+    GPIO_InterruptEdges                      0x000005fd   Thumb Code   116  gpio_program.o(.text.GPIO_InterruptEdges)
+    GPIO_Lock                                0x00000671   Thumb Code    58  gpio_program.o(.text.GPIO_Lock)
+    GPIO_SelectInterruptEvent                0x000006ad   Thumb Code   116  gpio_program.o(.text.GPIO_SelectInterruptEvent)
+    GPIO_SelectInterruptSense                0x00000721   Thumb Code   114  gpio_program.o(.text.GPIO_SelectInterruptSense)
+    GPIO_SetCallBack                         0x00000795   Thumb Code    36  gpio_program.o(.text.GPIO_SetCallBack)
+    GPIO_SetPinDigitalEnable                 0x000007b9   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinDigitalEnable)
+    GPIO_SetPinDirection                     0x0000082d   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinDirection)
+    GPIO_SetPinValue                         0x000008a1   Thumb Code   116  gpio_program.o(.text.GPIO_SetPinValue)
+    GPIO_Unlock                              0x00000915   Thumb Code    64  gpio_program.o(.text.GPIO_Unlock)
+    GPIO_u8GetInterruptStatus                0x00000955   Thumb Code    84  gpio_program.o(.text.GPIO_u8GetInterruptStatus)
+    LED_Init                                 0x000009a9   Thumb Code    38  led_program.o(.text.LED_Init)
+    LED_TurnOFF                              0x000009d1   Thumb Code    14  led_program.o(.text.LED_TurnOFF)
+    LED_TurnON                               0x000009e1   Thumb Code    14  led_program.o(.text.LED_TurnON)
+    NVIC_vidSetInterrupt                     0x000009f1   Thumb Code   104  nvic_program.o(.text.NVIC_vidSetInterrupt)
+    SW1_Init                                 0x00000a59   Thumb Code   124  button_program.o(.text.SW1_Init)
+    SW2_Init                                 0x00000ad5   Thumb Code   112  button_program.o(.text.SW2_Init)
+    SYSCTRL_GPIO_CLK_EN                      0x00000b45   Thumb Code   142  sys_program.o(.text.SYSCTRL_GPIO_CLK_EN)
+    SYSTICK_GetCurrentValue                  0x00000be9   Thumb Code    12  systick_program.o(.text.SYSTICK_GetCurrentValue)
+    SYSTICK_INT_DIS                          0x00000bf5   Thumb Code    18  systick_program.o(.text.SYSTICK_INT_DIS)
+    SYSTICK_Init                             0x00000c09   Thumb Code    28  systick_program.o(.text.SYSTICK_Init)
+    SYSTICK_Reload                           0x00000c25   Thumb Code    20  systick_program.o(.text.SYSTICK_Reload)
+    SYSTICK_Start                            0x00000c39   Thumb Code    18  systick_program.o(.text.SYSTICK_Start)
+    SysTick_Handler                          0x00000c4d   Thumb Code    16  systick_program.o(.text.SysTick_Handler)
+    SystemInit                               0x00000c5d   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
+    main                                     0x00000d69   Thumb Code    98  main.o(.text.main)
+    vidProcessButtons                        0x00000dcd   Thumb Code    54  button_program.o(.text.vidProcessButtons)
+    _fp_init                                 0x00000e03   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x00000e1b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x00000e1b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x00000e1c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000e2c   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000060   Data           0  libspace.o(.bss)
 
@@ -602,110 +726,134 @@ Memory Map of the image
 
   Image Entry point : 0x000002f1
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x0000083c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000e2c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000083c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000e2c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x0000026c   Data   RO           72    RESET               startup_tm4c123.o
-    0x0000026c   0x0000026c   0x00000008   Code   RO           97  * !!!main             c_w.l(__main.o)
-    0x00000274   0x00000274   0x00000034   Code   RO          262    !!!scatter          c_w.l(__scatter.o)
-    0x000002a8   0x000002a8   0x0000001c   Code   RO          264    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000002c4   0x000002c4   0x00000002   Code   RO          124    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000002c6   0x000002c6   0x00000004   Code   RO          130    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          133    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          135    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          138    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          140    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          142    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          145    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          147    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          149    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          151    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          153    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          155    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          157    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          159    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          161    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          163    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          165    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          169    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          171    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          173    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000000   Code   RO          175    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
-    0x000002ca   0x000002ca   0x00000002   Code   RO          176    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
-    0x000002cc   0x000002cc   0x00000002   Code   RO          198    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          213    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          215    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          218    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          221    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          223    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000000   Code   RO          226    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x000002ce   0x000002ce   0x00000002   Code   RO          227    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x000002d0   0x000002d0   0x00000000   Code   RO           99    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x000002d0   0x000002d0   0x00000000   Code   RO          101    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x000002d0   0x000002d0   0x00000006   Code   RO          113    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x000002d6   0x000002d6   0x00000000   Code   RO          103    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x000002d6   0x000002d6   0x00000004   Code   RO          104    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x000002da   0x000002da   0x00000000   Code   RO          106    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x000002da   0x000002da   0x00000008   Code   RO          107    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x000002e2   0x000002e2   0x00000002   Code   RO          128    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x000002e4   0x000002e4   0x00000000   Code   RO          178    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x000002e4   0x000002e4   0x00000004   Code   RO          179    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x000002e8   0x000002e8   0x00000006   Code   RO          180    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x00000000   0x00000000   0x0000026c   Data   RO          137    RESET               startup_tm4c123.o
+    0x0000026c   0x0000026c   0x00000008   Code   RO          162  * !!!main             c_w.l(__main.o)
+    0x00000274   0x00000274   0x00000034   Code   RO          335    !!!scatter          c_w.l(__scatter.o)
+    0x000002a8   0x000002a8   0x0000001c   Code   RO          337    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002c4   0x000002c4   0x00000002   Code   RO          197    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002c6   0x000002c6   0x00000004   Code   RO          203    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          206    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          208    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          211    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          213    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          215    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          218    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          220    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          222    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          224    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          226    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          228    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          230    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          232    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          234    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          236    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          238    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          242    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          244    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          246    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000000   Code   RO          248    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x000002ca   0x000002ca   0x00000002   Code   RO          249    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x000002cc   0x000002cc   0x00000002   Code   RO          271    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          286    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          288    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          291    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          294    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          296    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000000   Code   RO          299    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x000002ce   0x000002ce   0x00000002   Code   RO          300    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x000002d0   0x000002d0   0x00000000   Code   RO          172    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x000002d0   0x000002d0   0x00000000   Code   RO          174    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x000002d0   0x000002d0   0x00000006   Code   RO          186    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x000002d6   0x000002d6   0x00000000   Code   RO          176    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x000002d6   0x000002d6   0x00000004   Code   RO          177    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x000002da   0x000002da   0x00000000   Code   RO          179    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x000002da   0x000002da   0x00000008   Code   RO          180    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x000002e2   0x000002e2   0x00000002   Code   RO          201    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x000002e4   0x000002e4   0x00000000   Code   RO          251    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x000002e4   0x000002e4   0x00000004   Code   RO          252    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x000002e8   0x000002e8   0x00000006   Code   RO          253    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x000002ee   0x000002ee   0x00000002   PAD
-    0x000002f0   0x000002f0   0x00000114   Code   RO           73  * .text               startup_tm4c123.o
-    0x00000404   0x00000404   0x00000006   Code   RO           95    .text               c_w.l(heapauxi.o)
-    0x0000040a   0x0000040a   0x0000004a   Code   RO          115    .text               c_w.l(sys_stackheap_outer.o)
-    0x00000454   0x00000454   0x00000012   Code   RO          117    .text               c_w.l(exit.o)
+    0x000002f0   0x000002f0   0x00000114   Code   RO          138  * .text               startup_tm4c123.o
+    0x00000404   0x00000404   0x00000006   Code   RO          160    .text               c_w.l(heapauxi.o)
+    0x0000040a   0x0000040a   0x0000004a   Code   RO          188    .text               c_w.l(sys_stackheap_outer.o)
+    0x00000454   0x00000454   0x00000012   Code   RO          190    .text               c_w.l(exit.o)
     0x00000466   0x00000466   0x00000002   PAD
-    0x00000468   0x00000468   0x00000008   Code   RO          125    .text               c_w.l(libspace.o)
-    0x00000470   0x00000470   0x0000000c   Code   RO          188    .text               c_w.l(sys_exit.o)
-    0x0000047c   0x0000047c   0x00000002   Code   RO          203    .text               c_w.l(use_no_semi.o)
-    0x0000047e   0x0000047e   0x00000000   Code   RO          205    .text               c_w.l(indicate_semi.o)
+    0x00000468   0x00000468   0x00000008   Code   RO          198    .text               c_w.l(libspace.o)
+    0x00000470   0x00000470   0x0000000c   Code   RO          261    .text               c_w.l(sys_exit.o)
+    0x0000047c   0x0000047c   0x00000002   Code   RO          276    .text               c_w.l(use_no_semi.o)
+    0x0000047e   0x0000047e   0x00000000   Code   RO          278    .text               c_w.l(indicate_semi.o)
     0x0000047e   0x0000047e   0x00000002   PAD
     0x00000480   0x00000480   0x00000012   Code   RO           54    .text.GPIOF_CLK_EN  gpio_program.o
     0x00000492   0x00000492   0x00000002   PAD
-    0x00000494   0x00000494   0x00000074   Code   RO           56    .text.GPIO_SetPinDigitalEnable  gpio_program.o
-    0x00000508   0x00000508   0x00000074   Code   RO           58    .text.GPIO_SetPinDirection  gpio_program.o
-    0x0000057c   0x0000057c   0x00000074   Code   RO           60    .text.GPIO_SetPinValue  gpio_program.o
-    0x000005f0   0x000005f0   0x00000026   Code   RO           11    .text.LED_Init      led_program.o
-    0x00000616   0x00000616   0x00000002   PAD
-    0x00000618   0x00000618   0x0000000e   Code   RO           15    .text.LED_TurnOFF   led_program.o
-    0x00000626   0x00000626   0x00000002   PAD
-    0x00000628   0x00000628   0x0000000e   Code   RO           13    .text.LED_TurnON    led_program.o
-    0x00000636   0x00000636   0x00000002   PAD
-    0x00000638   0x00000638   0x00000012   Code   RO           30    .text.SYSTICK_CLK_EN  systick_program.o
-    0x0000064a   0x0000064a   0x00000002   PAD
-    0x0000064c   0x0000064c   0x0000000c   Code   RO           40    .text.SYSTICK_GetCurrentValue  systick_program.o
-    0x00000658   0x00000658   0x00000012   Code   RO           26    .text.SYSTICK_INT_DIS  systick_program.o
-    0x0000066a   0x0000066a   0x00000002   PAD
-    0x0000066c   0x0000066c   0x0000001c   Code   RO           28    .text.SYSTICK_Init  systick_program.o
-    0x00000688   0x00000688   0x00000014   Code   RO           32    .text.SYSTICK_Reload  systick_program.o
-    0x0000069c   0x0000069c   0x00000012   Code   RO           34    .text.SYSTICK_Start  systick_program.o
-    0x000006ae   0x000006ae   0x00000002   PAD
-    0x000006b0   0x000006b0   0x00000010   Code   RO           44    .text.SysTick_Handler  systick_program.o
-    0x000006c0   0x000006c0   0x0000010c   Code   RO           84    .text.SystemInit    system_tm4c123.o
-    0x000007cc   0x000007cc   0x00000046   Code   RO            2    .text.main          main.o
-    0x00000812   0x00000812   0x0000001a   Code   RO          186    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0000082c   0x0000082c   0x00000010   Data   RO          261    Region$$Table       anon$$obj.o
+    0x00000494   0x00000494   0x00000010   Code   RO           86    .text.GPIOF_Handler  gpio_program.o
+    0x000004a4   0x000004a4   0x0000004a   Code   RO           74    .text.GPIO_ClearInterrupt  gpio_program.o
+    0x000004ee   0x000004ee   0x00000002   PAD
+    0x000004f0   0x000004f0   0x0000004a   Code   RO           82    .text.GPIO_Commit   gpio_program.o
+    0x0000053a   0x0000053a   0x00000002   PAD
+    0x0000053c   0x0000053c   0x00000074   Code   RO           64    .text.GPIO_Config_PUR  gpio_program.o
+    0x000005b0   0x000005b0   0x0000004a   Code   RO           68    .text.GPIO_EnableInterrupt  gpio_program.o
+    0x000005fa   0x000005fa   0x00000002   PAD
+    0x000005fc   0x000005fc   0x00000074   Code   RO           72    .text.GPIO_InterruptEdges  gpio_program.o
+    0x00000670   0x00000670   0x0000003a   Code   RO           80    .text.GPIO_Lock     gpio_program.o
+    0x000006aa   0x000006aa   0x00000002   PAD
+    0x000006ac   0x000006ac   0x00000074   Code   RO           70    .text.GPIO_SelectInterruptEvent  gpio_program.o
+    0x00000720   0x00000720   0x00000072   Code   RO           66    .text.GPIO_SelectInterruptSense  gpio_program.o
+    0x00000792   0x00000792   0x00000002   PAD
+    0x00000794   0x00000794   0x00000024   Code   RO           84    .text.GPIO_SetCallBack  gpio_program.o
+    0x000007b8   0x000007b8   0x00000074   Code   RO           56    .text.GPIO_SetPinDigitalEnable  gpio_program.o
+    0x0000082c   0x0000082c   0x00000074   Code   RO           58    .text.GPIO_SetPinDirection  gpio_program.o
+    0x000008a0   0x000008a0   0x00000074   Code   RO           60    .text.GPIO_SetPinValue  gpio_program.o
+    0x00000914   0x00000914   0x00000040   Code   RO           78    .text.GPIO_Unlock   gpio_program.o
+    0x00000954   0x00000954   0x00000054   Code   RO           76    .text.GPIO_u8GetInterruptStatus  gpio_program.o
+    0x000009a8   0x000009a8   0x00000026   Code   RO           11    .text.LED_Init      led_program.o
+    0x000009ce   0x000009ce   0x00000002   PAD
+    0x000009d0   0x000009d0   0x0000000e   Code   RO           15    .text.LED_TurnOFF   led_program.o
+    0x000009de   0x000009de   0x00000002   PAD
+    0x000009e0   0x000009e0   0x0000000e   Code   RO           13    .text.LED_TurnON    led_program.o
+    0x000009ee   0x000009ee   0x00000002   PAD
+    0x000009f0   0x000009f0   0x00000068   Code   RO          119    .text.NVIC_vidSetInterrupt  nvic_program.o
+    0x00000a58   0x00000a58   0x0000007c   Code   RO           98    .text.SW1_Init      button_program.o
+    0x00000ad4   0x00000ad4   0x00000070   Code   RO          102    .text.SW2_Init      button_program.o
+    0x00000b44   0x00000b44   0x0000008e   Code   RO          111    .text.SYSCTRL_GPIO_CLK_EN  sys_program.o
+    0x00000bd2   0x00000bd2   0x00000002   PAD
+    0x00000bd4   0x00000bd4   0x00000012   Code   RO           30    .text.SYSTICK_CLK_EN  systick_program.o
+    0x00000be6   0x00000be6   0x00000002   PAD
+    0x00000be8   0x00000be8   0x0000000c   Code   RO           40    .text.SYSTICK_GetCurrentValue  systick_program.o
+    0x00000bf4   0x00000bf4   0x00000012   Code   RO           26    .text.SYSTICK_INT_DIS  systick_program.o
+    0x00000c06   0x00000c06   0x00000002   PAD
+    0x00000c08   0x00000c08   0x0000001c   Code   RO           28    .text.SYSTICK_Init  systick_program.o
+    0x00000c24   0x00000c24   0x00000014   Code   RO           32    .text.SYSTICK_Reload  systick_program.o
+    0x00000c38   0x00000c38   0x00000012   Code   RO           34    .text.SYSTICK_Start  systick_program.o
+    0x00000c4a   0x00000c4a   0x00000002   PAD
+    0x00000c4c   0x00000c4c   0x00000010   Code   RO           44    .text.SysTick_Handler  systick_program.o
+    0x00000c5c   0x00000c5c   0x0000010c   Code   RO          149    .text.SystemInit    system_tm4c123.o
+    0x00000d68   0x00000d68   0x00000062   Code   RO            2    .text.main          main.o
+    0x00000dca   0x00000dca   0x00000002   PAD
+    0x00000dcc   0x00000dcc   0x00000036   Code   RO          100    .text.vidProcessButtons  button_program.o
+    0x00000e02   0x00000e02   0x0000001a   Code   RO          259    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00000e1c   0x00000e1c   0x00000010   Data   RO          334    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0000083c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00000e2c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x0000083c, Size: 0x00000268, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x00000e2c, Size: 0x00000268, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000        -       0x00000060   Zero   RW          126    .bss                c_w.l(libspace.o)
+    0x20000000        -       0x00000060   Zero   RW          199    .bss                c_w.l(libspace.o)
     0x20000060        -       0x00000004   Zero   RW           46    .bss.CallBack       systick_program.o
-    0x20000064   0x0000083c   0x00000004   PAD
-    0x20000068        -       0x00000000   Zero   RW           71    HEAP                startup_tm4c123.o
-    0x20000068        -       0x00000200   Zero   RW           70    STACK               startup_tm4c123.o
+    0x20000064        -       0x00000004   Zero   RW           88    .bss.GPIOF_CallBack  gpio_program.o
+    0x20000068        -       0x00000000   Zero   RW          136    HEAP                startup_tm4c123.o
+    0x20000068        -       0x00000200   Zero   RW          135    STACK               startup_tm4c123.o
 
 
 ==============================================================================
@@ -715,17 +863,20 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       366         18          0          0          0       1416   gpio_program.o
+       290          0          0          0          0       1042   button_program.o
+      1308         78          0          0          4       3413   gpio_program.o
         66          0          0          0          0        671   led_program.o
-        70          0          0          0          0        569   main.o
+        98          0          0          0          0        576   main.o
+       104          0          0          0          0       1794   nvic_program.o
        276         24        620          0        512       5460   startup_tm4c123.o
+       142          6          0          0          0        631   sys_program.o
        268          0          0          0          0       6732   system_tm4c123.o
        130          0          0          0          4       1711   systick_program.o
 
     ----------------------------------------------------------------------
-      1190         42        636          0        520      16559   Object Totals
+      2710        108        636          0        520      22030   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-        14          0          0          0          4          0   (incl. Padding)
+        28          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -773,15 +924,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1472         58        636          0        616      16955   Grand Totals
-      1472         58        636          0        616      16955   ELF Image Totals
-      1472         58        636          0          0          0   ROM Totals
+      2992        124        636          0        616      22366   Grand Totals
+      2992        124        636          0        616      22366   ELF Image Totals
+      2992        124        636          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2108 (   2.06kB)
+    Total RO  Size (Code + RO Data)                 3628 (   3.54kB)
     Total RW  Size (RW Data + ZI Data)               616 (   0.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       2108 (   2.06kB)
+    Total ROM Size (Code + RO Data + RW Data)       3628 (   3.54kB)
 
 ==============================================================================
 

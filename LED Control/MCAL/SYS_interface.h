@@ -1,0 +1,37 @@
+#ifndef _SYSCNTRL_INTERFACE_H
+#define _SYSCNTRL_INTERFACE_H
+
+
+#include "STD_TYPES.h"
+
+
+#define SYSCNTRL_GPIO_PORTA 0
+#define SYSCNTRL_GPIO_PORTB 1
+#define SYSCNTRL_GPIO_PORTC 2
+#define SYSCNTRL_GPIO_PORTD 3
+#define SYSCNTRL_GPIO_PORTE 4
+#define SYSCNTRL_GPIO_PORTF 5
+
+#define SYSCNTRL_I2C_0 0
+#define SYSCNTRL_I2C_1 1
+#define SYSCNTRL_I2C_2 2
+#define SYSCNTRL_I2C_3 3
+
+#define SYSCNTRL_UART0 0
+#define SYSCNTRL_UART1 1
+#define SYSCNTRL_UART2 2
+
+
+#define SYSCNTRL_TIMER_0 0
+#define SYSCNTRL_TIMER_1 1
+
+#define SYSCNTRL_ADC_0 0
+#define SYSCNTRL_ADC_1 1
+
+
+
+void SYSCTRL_GPIO_CLK_EN (uint8_t GPIO_ID);
+
+
+
+#endif

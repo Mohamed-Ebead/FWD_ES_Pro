@@ -27,184 +27,78 @@ Project File Date:  12/19/2022
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling main.c...
 compiling LED_program.c...
-LED Control/MCAL/SysTick_program.c(49): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        CLR_BIT(SYSTICK->CTRL,SYSTICK_INTERRUPT_ENABLED);
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./LED Control/Lib\BIT_calc.h(5): note: expanded from macro 'CLR_BIT'
-#define CLR_BIT(VAR,BITNO) (VAR) &= ~(1 << (BITNO))
-                                 ~~ ^~~~~~~~~~~~~~~
-LED Control/MCAL/SysTick_program.c(73): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        CLR_BIT(SYSTICK->CTRL,SYSTICK_SYSTEM_CLOCK);
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./LED Control/Lib\BIT_calc.h(5): note: expanded from macro 'CLR_BIT'
-#define CLR_BIT(VAR,BITNO) (VAR) &= ~(1 << (BITNO))
-                                 ~~ ^~~~~~~~~~~~~~~
-LED Control/MCAL/SysTick_program.c(93): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        CLR_BIT(SYSTICK->CTRL,SYSTICK_EN);
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./LED Control/Lib\BIT_calc.h(5): note: expanded from macro 'CLR_BIT'
-#define CLR_BIT(VAR,BITNO) (VAR) &= ~(1 << (BITNO))
-                                 ~~ ^~~~~~~~~~~~~~~
-LED Control/MCAL/SysTick_program.c(124): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
-void SysTick_Handler(void)
-     ^
-LED Control/MCAL/SysTick_program.c(124): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void SysTick_Handler(void)
-^
-static 
-4 warnings generated.
-compiling SysTick_program.c...
+LED Control/App/LED_Control/main.c(16): warning: In file included from...
+./LED Control/MCAL\SYS_interface.h(37): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LED Control/App/LED_Control/main.c(17): warning: In file included from...
+./LED Control/HAL/Button\BUTTON_interface.h(24): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LED Control/App/LED_Control/main.c(18): warning: missing terminating '"' character [-Winvalid-pp-token]
+#include "NVIC_interface.h""
+                           ^
+LED Control/App/LED_Control/main.c(18): warning: extra tokens at end of #include directive [-Wextra-tokens]
+LED Control/App/LED_Control/main.c(18): warning: In file included from...
+./LED Control/MCAL\NVIC_interface.h(5): warning: non-portable path to file '"STD_TYPES.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STD_Types.h"
+         ^~~~~~~~~~~~~
+         "STD_TYPES.h"
+./LED Control/MCAL\NVIC_interface.h(56): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LED Control/App/LED_Control/main.c(45): warning: implicit declaration of function '__enable_irq' [-Wimplicit-function-declaration]
+        __enable_irq();
+        ^
+LED Control/App/LED_Control/main.c(33): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint8_t flag = 0;
+                ^
+8 warnings generated.
+compiling main.c...
 LED Control/MCAL/GPIO_program.c(13): warning: In file included from...
 ./LED Control/MCAL/GPIO_private.h(4): warning: // comments are not allowed in this language [-Wcomment]
 //GPIOF Registers (GPIOF is chosen for simulation btn and LEDs)
 ^
-1 warning generated.
-compiling GPIO_program.c...
-RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Lenovo/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-RTE/Device/TM4C123GH6PM/system_TM4C123.c(19): warning: // comments are not allowed in this language [-Wcomment]
-//-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
+LED Control/MCAL/GPIO_program.c(438): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void GPIOF_Handler()
+                  ^
+                   void
+LED Control/MCAL/GPIO_program.c(438): warning: no previous prototype for function 'GPIOF_Handler' [-Wmissing-prototypes]
+void GPIOF_Handler()
+     ^
+LED Control/MCAL/GPIO_program.c(438): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIOF_Handler()
 ^
-45 warnings generated.
-compiling system_TM4C123.c...
+static 
+3 warnings generated.
+compiling GPIO_program.c...
+LED Control/HAL/Button/BUTTON_program.c(9): warning: In file included from...
+./LED Control/HAL/Button/BUTTON_interface.h(24): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LED Control/HAL/Button/BUTTON_program.c(10): warning: In file included from...
+./LED Control/MCAL\NVIC_interface.h(5): warning: non-portable path to file '"STD_TYPES.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STD_Types.h"
+         ^~~~~~~~~~~~~
+         "STD_TYPES.h"
+./LED Control/MCAL\NVIC_interface.h(56): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LED Control/HAL/Button/BUTTON_program.c(16): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for (int i = 0; i < milli; i++)
+             ^
+LED Control/HAL/Button/BUTTON_program.c(16): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+LED Control/HAL/Button/BUTTON_program.c(18): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+                for (int j = 0; j < 3118; j++)
+                     ^
+LED Control/HAL/Button/BUTTON_program.c(18): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+7 warnings generated.
+compiling BUTTON_program.c...
 linking...
-Program Size: Code=1472 RO-data=636 RW-data=0 ZI-data=616  
+Program Size: Code=2992 RO-data=636 RW-data=0 ZI-data=616  
 FromELF: creating hex file...
-".\Objects\00_LED_Control.axf" - 0 Error(s), 50 Warning(s).
+".\Objects\00_LED_Control.axf" - 0 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -230,10 +124,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
       Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/system_TM4C123.c
-      Source file:   Device/Source/ARM/startup_TM4C123.s
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

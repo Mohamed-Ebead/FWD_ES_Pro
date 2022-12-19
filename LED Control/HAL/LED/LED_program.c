@@ -19,7 +19,7 @@ void LED_Init(void)
 {
 	GPIOF_CLK_EN ();
 	GPIO_SetPinDirection(GPIO_PORTF,GPIO_PIN2,GPIO_OUTPUT);
-	GPIO_SetPinDigitalEnable(GPIO_PORTF,GPIO_PIN2,GPIO_PIN_SET);
+	GPIO_SetPinDigitalEnable(GPIO_PORTF,GPIO_PIN2,GPIO_DIG_ENABLE);
 }
 
 

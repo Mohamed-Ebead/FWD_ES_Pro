@@ -35,12 +35,48 @@
 #define GPIO_DIG_ENABLE  ((uint8_t)1)
 
 
+
+
+#define GPIO_PUR_DISABLED 0
+#define GPIO_PUR_ENABLED 1
+
+#define GPIO_SENSE_EDGE 0
+#define GPIO_SENSE_LEVEL 1
+
+/*Interrupt event*/
+#define GPIO_LL_FE 0
+#define GPIO_HL_RE 1
+#define GPIO_EVENT_FE GPIO_LL_FE
+#define GPIO_EVENT_RE GPIO_HL_RE
+#define GPIO_EVENT_LL GPIO_LL_FE
+#define GPIO_EVENT_HL GPIO_HL_RE
+
+#define GPIO_EVENT_FALLINGEDGE GPIO_LL_FE 
+#define GPIO_EVENT_RISINGEDGE GPIO_HL_RE
+
+/*Interrupt both edges*/
+#define GPIO_INTERRUPT_EVENTCONTROLLED 0
+#define GPIO_INTERRUPT_BOTHEDGES 1
+
 /* GPIO APIs ----------------------------------------------------------------*/
 void GPIOF_CLK_EN (void) ;
 void GPIO_SetPinDigitalEnable(uint8_t Copy_PortID, uint8_t Copy_PinNum, uint8_t Copy_ENorDIS);
 void GPIO_SetPinDirection(uint8_t Copy_PortID, uint8_t Copy_PinNum,uint8_t Copy_Direction);
 void GPIO_SetPinValue(uint8_t Copy_PortID,uint8_t Copy_PinNum, uint8_t Copy_Value);
 uint8_t GPIO_GetPinValue(uint8_t Copy_PortID,uint8_t Copy_PinNum);
+
+
+void GPIO_Config_PUR(uint8_t Copy_PortID, uint8_t Copy_PinNum, uint8_t uint8_tPURConfig);
+void GPIO_SelectInterruptSense(uint8_t Copy_PortID, uint8_t Copy_PinNum, uint8_t uint8_tSense);
+void GPIO_EnableInterrupt(uint8_t Copy_PortID, uint8_t Copy_PinNum);
+void GPIO_SelectInterruptEvent(uint8_t Copy_PortID, uint8_t Copy_PinNum, uint8_t uint8_tEvent);
+void GPIO_InterruptEdges(uint8_t Copy_PortID, uint8_t Copy_PinNum, uint8_t uint8_tBothEdges);
+void GPIO_ClearInterrupt(uint8_t Copy_PortID, uint8_t Copy_PinNum);
+void GPIO_Unlock(uint8_t Copy_PortID);
+void GPIO_Lock(uint8_t Copy_PortID);
+void GPIO_Commit(uint8_t Copy_PortID,uint8_t Copy_PinNum);
+void GPIO_SetCallBack(uint8_t Copy_PortID,void (*ptrF) (void));
+uint8_t GPIO_u8GetInterruptStatus(uint8_t Copy_PortID, uint8_t Copy_PinNum);
 
 
 #endif

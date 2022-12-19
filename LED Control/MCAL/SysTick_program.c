@@ -58,7 +58,8 @@ void SYSTICK_Init(void)
 {
 	SYSTICK_CLK_EN();
 	SYSTICK_INT_DIS();
-	SYSTICK_Reload(800000);
+	SYSTICK_Reload(1600000);
+	//	SYSTICK_SETCallBack();
 	SYSTICK_Start();
 
 }

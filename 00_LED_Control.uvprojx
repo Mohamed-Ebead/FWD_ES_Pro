@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\LED Control\App\LED_Control;.\LED Control\HAL\LED;.\LED Control\Lib;.\LED Control\MCAL;.\LED Control\Service</IncludePath>
+              <IncludePath>.\LED Control\App\LED_Control;.\LED Control\HAL\LED;.\LED Control\Lib;.\LED Control\MCAL;.\LED Control\Service;.\LED Control\HAL\Button</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -413,6 +413,21 @@
               <FileName>GPIO_program.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\LED Control\MCAL\GPIO_program.c</FilePath>
+            </File>
+            <File>
+              <FileName>BUTTON_program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LED Control\HAL\Button\BUTTON_program.c</FilePath>
+            </File>
+            <File>
+              <FileName>SYS_program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LED Control\MCAL\SYS_program.c</FilePath>
+            </File>
+            <File>
+              <FileName>NVIC_program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LED Control\MCAL\NVIC_program.c</FilePath>
             </File>
           </Files>
         </Group>
