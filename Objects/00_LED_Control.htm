@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\00_LED_Control.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\00_LED_Control.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Dec 20 21:05:25 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Dec 20 22:13:44 2022
 <BR><P>
 <H3>Maximum Stack Usage =         48 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1268,7 +1268,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[9d]"></a>GPIO_ClearInterrupt</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_ClearInterrupt))
+<P><STRONG><a name="[9d]"></a>GPIO_ClearInterrupt</STRONG> (Thumb, 194 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_ClearInterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_ClearInterrupt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vidProcessButtons
@@ -1276,49 +1276,49 @@ Global Symbols
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[97]"></a>GPIO_Commit</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Commit))
+<P><STRONG><a name="[97]"></a>GPIO_Commit</STRONG> (Thumb, 194 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Commit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_Commit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[99]"></a>GPIO_Config_PUR</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Config_PUR))
+<P><STRONG><a name="[99]"></a>GPIO_Config_PUR</STRONG> (Thumb, 428 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Config_PUR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_Config_PUR
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[9e]"></a>GPIO_EnableInterrupt</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_EnableInterrupt))
+<P><STRONG><a name="[9e]"></a>GPIO_EnableInterrupt</STRONG> (Thumb, 194 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_EnableInterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_EnableInterrupt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[9b]"></a>GPIO_InterruptEdges</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_InterruptEdges))
+<P><STRONG><a name="[9b]"></a>GPIO_InterruptEdges</STRONG> (Thumb, 428 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_InterruptEdges))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_InterruptEdges
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[98]"></a>GPIO_Lock</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Lock))
+<P><STRONG><a name="[98]"></a>GPIO_Lock</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Lock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_Lock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[9c]"></a>GPIO_SelectInterruptEvent</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SelectInterruptEvent))
+<P><STRONG><a name="[9c]"></a>GPIO_SelectInterruptEvent</STRONG> (Thumb, 428 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SelectInterruptEvent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_SelectInterruptEvent
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[9a]"></a>GPIO_SelectInterruptSense</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SelectInterruptSense))
+<P><STRONG><a name="[9a]"></a>GPIO_SelectInterruptSense</STRONG> (Thumb, 416 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SelectInterruptSense))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_SelectInterruptSense
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
@@ -1331,7 +1331,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[91]"></a>GPIO_SetPinDigitalEnable</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinDigitalEnable))
+<P><STRONG><a name="[91]"></a>GPIO_SetPinDigitalEnable</STRONG> (Thumb, 302 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinDigitalEnable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_SetPinDigitalEnable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
@@ -1339,7 +1339,7 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 
-<P><STRONG><a name="[90]"></a>GPIO_SetPinDirection</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinDirection))
+<P><STRONG><a name="[90]"></a>GPIO_SetPinDirection</STRONG> (Thumb, 364 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinDirection))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_SetPinDirection
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
@@ -1347,21 +1347,21 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 
-<P><STRONG><a name="[93]"></a>GPIO_SetPinValue</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinValue))
+<P><STRONG><a name="[93]"></a>GPIO_SetPinValue</STRONG> (Thumb, 364 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_SetPinValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_SetPinValue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_TurnON
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_TurnOFF
 </UL>
 
-<P><STRONG><a name="[96]"></a>GPIO_Unlock</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Unlock))
+<P><STRONG><a name="[96]"></a>GPIO_Unlock</STRONG> (Thumb, 154 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_Unlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_Unlock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW1_Init
 </UL>
 
-<P><STRONG><a name="[a8]"></a>GPIO_u8GetInterruptStatus</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_u8GetInterruptStatus))
+<P><STRONG><a name="[a8]"></a>GPIO_u8GetInterruptStatus</STRONG> (Thumb, 204 bytes, Stack size 8 bytes, gpio_program.o(.text.GPIO_u8GetInterruptStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_u8GetInterruptStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vidProcessButtons

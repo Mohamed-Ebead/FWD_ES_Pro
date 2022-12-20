@@ -40,7 +40,7 @@ void SW1_Init(void)
 	
 	
 	/*Pull resistance*/
-	GPIO_Config_PUR(GPIO_PORTF,GPIO_PIN0,GPIO_PUR_ENABLED);
+	GPIO_Config_PUR(GPIO_PORTF,GPIO_PIN0,GPIO_PUR_EN);
 
 	/*Event Sense*/
 	GPIO_SelectInterruptSense(GPIO_PORTF,GPIO_PIN0,GPIO_SENSE_EDGE);
@@ -76,7 +76,7 @@ void SW2_Init (void)
 	GPIO_SetPinDigitalEnable(GPIO_PORTF,GPIO_PIN2,GPIO_DIG_ENABLE);
 	
 		/*Pull resistance*/
-	GPIO_Config_PUR(GPIO_PORTF,GPIO_PIN4,GPIO_PUR_ENABLED);
+	GPIO_Config_PUR(GPIO_PORTF,GPIO_PIN4,GPIO_PUR_EN);
 
 	/*Event Sense*/
 	GPIO_SelectInterruptSense(GPIO_PORTF,GPIO_PIN4,GPIO_SENSE_EDGE);

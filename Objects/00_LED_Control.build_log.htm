@@ -27,73 +27,37 @@ Project File Date:  12/20/2022
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-LED Control/MCAL/NVIC_program.c(12): warning: In file included from...
-./LED Control/MCAL/NVIC_interface.h(5): warning: non-portable path to file '"STD_TYPES.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-#include "STD_Types.h"
-         ^~~~~~~~~~~~~
-         "STD_TYPES.h"
-./LED Control/MCAL/NVIC_interface.h(49): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-LED Control/MCAL/NVIC_program.c(65): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        NVIC->IP[uint8_tInterruptID] = (uint8_tInterruptPriority<<5);
-                                     ~  ~~~~~~~~~~~~~~~~~~~~~~~~^~~
-LED Control/MCAL/NVIC_program.c(66): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-4 warnings generated.
-compiling NVIC_program.c...
-LED Control/App/LED_Control/main.c(16): warning: In file included from...
-./LED Control/HAL/Button\BUTTON_interface.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-LED Control/App/LED_Control/main.c(17): warning: missing terminating '"' character [-Winvalid-pp-token]
-#include "NVIC_interface.h""
-                           ^
-LED Control/App/LED_Control/main.c(17): warning: extra tokens at end of #include directive [-Wextra-tokens]
-LED Control/App/LED_Control/main.c(17): warning: In file included from...
-./LED Control/MCAL\NVIC_interface.h(5): warning: non-portable path to file '"STD_TYPES.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-#include "STD_Types.h"
-         ^~~~~~~~~~~~~
-         "STD_TYPES.h"
-./LED Control/MCAL\NVIC_interface.h(49): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-LED Control/App/LED_Control/main.c(23): warning: no previous extern declaration for non-static variable 'LED_State' [-Wmissing-variable-declarations]
-LED_STATE_t LED_State = LED_OFF ;
-            ^
-LED Control/App/LED_Control/main.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-LED_STATE_t LED_State = LED_OFF ;
+LED Control/MCAL/GPIO_program.c(13): warning: In file included from...
+./LED Control/MCAL/GPIO_private.h(4): warning: // comments are not allowed in this language [-Wcomment]
+//GPIOF Registers (GPIOF is chosen for simulation btn and LEDs)
 ^
-LED Control/App/LED_Control/main.c(42): warning: implicit declaration of function '__enable_irq' [-Wimplicit-function-declaration]
-        __enable_irq();
-        ^
-LED Control/App/LED_Control/main.c(47): warning: // comments are not allowed in this language [-Wcomment]
-                if (SYSTICK_TimeElapsedFlag == 1)   // check every second
-                                                    ^
-LED Control/App/LED_Control/main.c(51): warning: enumeration value 'LED_IDLE' not handled in switch [-Wswitch]
-                        switch (LED_State)
-                                ^~~~~~~~~
-9 warnings generated.
-compiling main.c...
-LED Control/HAL/Button/BUTTON_program.c(9): warning: In file included from...
-./LED Control/HAL/Button/BUTTON_interface.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-LED Control/HAL/Button/BUTTON_program.c(10): warning: In file included from...
-./LED Control/MCAL\NVIC_interface.h(5): warning: non-portable path to file '"STD_TYPES.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-#include "STD_Types.h"
-         ^~~~~~~~~~~~~
-         "STD_TYPES.h"
-./LED Control/MCAL\NVIC_interface.h(49): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-3 warnings generated.
-compiling BUTTON_program.c...
+LED Control/MCAL/GPIO_program.c(43): warning: code will never be executed [-Wunreachable-code]
+                if (Copy_ENorDIS == GPIO_DIG_ENABLE) {
+                    ^~~~~~~~~~~~
+LED Control/MCAL/GPIO_program.c(300): warning: no previous prototype for function 'GPIO_ConfigurePullDown' [-Wmissing-prototypes]
+void GPIO_ConfigurePullDown(uint8_t uint8_tPort, uint8_t Copy_PinNum, uint8_t PURConfig)
+     ^
+LED Control/MCAL/GPIO_program.c(300): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIO_ConfigurePullDown(uint8_t uint8_tPort, uint8_t Copy_PinNum, uint8_t PURConfig)
+^
+static 
+LED Control/MCAL/GPIO_program.c(734): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void GPIOF_Handler()
+                  ^
+                   void
+LED Control/MCAL/GPIO_program.c(734): warning: no previous prototype for function 'GPIOF_Handler' [-Wmissing-prototypes]
+void GPIOF_Handler()
+     ^
+LED Control/MCAL/GPIO_program.c(734): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIOF_Handler()
+^
+static 
+5 warnings generated.
+compiling GPIO_program.c...
 linking...
-Program Size: Code=3176 RO-data=652 RW-data=4 ZI-data=632  
+Program Size: Code=5728 RO-data=652 RW-data=4 ZI-data=632  
 FromELF: creating hex file...
-".\Objects\00_LED_Control.axf" - 0 Error(s), 16 Warning(s).
+".\Objects\00_LED_Control.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -120,8 +84,8 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.0.1
       Include file:  Device/Include/TM4C123/TM4C123.h
-      Source file:   Device/Source/system_TM4C123.c
       Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

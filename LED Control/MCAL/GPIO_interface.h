@@ -37,8 +37,11 @@
 
 
 
-#define GPIO_PUR_DISABLED 0
-#define GPIO_PUR_ENABLED 1
+#define GPIO_PUR_DIS 0
+#define GPIO_PUR_EN 1
+
+#define GPIO_PDR_DIS 0
+#define GPIO_PDR_EN 1
 
 #define GPIO_SENSE_EDGE 0
 #define GPIO_SENSE_LEVEL 1
@@ -57,6 +60,8 @@
 /*Interrupt both edges*/
 #define GPIO_INTERRUPT_EVENTCONTROLLED 0
 #define GPIO_INTERRUPT_BOTHEDGES 1
+
+
 
 /* GPIO APIs ----------------------------------------------------------------*/
 void GPIOF_CLK_EN (void) ;
