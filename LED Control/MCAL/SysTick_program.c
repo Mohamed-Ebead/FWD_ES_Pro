@@ -15,6 +15,10 @@
 #include "SysTick_interface.h"
 
 
+uint8_t SYSTICK_TimeElapsedFlag = 0  ; 
+static void SYSTICK_TimeElapsedHandler(void);
+
+
 /* ptr to callback fn */
 static void (*CallBack) (void);
 
@@ -57,9 +61,9 @@ void SYSTICK_INT_DIS (void)
 void SYSTICK_Init(void)
 {
 	SYSTICK_CLK_EN();
-	SYSTICK_INT_DIS();
-	SYSTICK_Reload(1600000);
-	//	SYSTICK_SETCallBack();
+	SYSTICK_INT_EN();
+	SYSTICK_Reload(16000000);   // 1 second interval  (SYS Frequency 16MHZ)
+	SYSTICK_SETCallBack(SYSTICK_TimeElapsedHandler);
 	SYSTICK_Start();
 
 }
@@ -101,9 +105,10 @@ void SYSTICK_Stop(void)
   * @retval none
   */
 void SYSTICK_Reload(uint32_t Copy_Value) 
-	{
+{
 	SYSTICK->RELOAD = Copy_Value;
 }
+
 
 /**
   * @fn     SYSTICK_Reload
@@ -125,4 +130,12 @@ void SYSTICK_SETCallBack(void (*pfn) (void))
 void SysTick_Handler(void)
 {
 	CallBack();
+}
+
+
+uint32_t Seconds_counter = 0 ; 
+static void SYSTICK_TimeElapsedHandler(void)
+{
+	Seconds_counter ++ ;
+	SYSTICK_TimeElapsedFlag = 1 ; 
 }

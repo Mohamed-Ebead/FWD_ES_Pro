@@ -1,7 +1,7 @@
 /* BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : GPIO_prog.c
+  * @file           : main.c
   * @brief          : Main program body
   * @Author         : Mohamed Obaid 
   ******************************************************************************
@@ -13,7 +13,6 @@
 #include "LED_interface.h"
 #include "GPIO_interface.h"
 #include "SysTick_interface.h"
-#include "SYS_interface.h"
 #include "BUTTON_interface.h"
 #include "NVIC_interface.h""
 /* Private macro -------------------------------------------------------------*/
@@ -21,17 +20,15 @@
 
 
 /* Private variables ---------------------------------------------------------*/
-
+LED_STATE_t LED_State = LED_OFF ;
 
 
 
 int main(void) {
 
 
-	SYSCTRL_GPIO_CLK_EN(SYSCNTRL_GPIO_PORTF);
-	
-	uint8_t flag = 0;
-	
+	GPIOF_CLK_EN();
+
 	LED_Init();
 	SYSTICK_Init();
 
@@ -39,26 +36,41 @@ int main(void) {
 	SW2_Init();
 	
 		/*NVIC configuration*/
-	NVIC_vidSetInterrupt(NVIC_GPIOF);
+	NVIC_SetInterrupt(NVIC_GPIOF);
 	
 	/*Enable global interrupt*/
 	__enable_irq();
 	
 	while(1) {	
 		
-		
-		if(SYSTICK_GetCurrentValue() == 1) 
+	
+		if (SYSTICK_TimeElapsedFlag == 1)   // check every second
 		{
-			if (flag == 1) 
+			SYSTICK_TimeElapsedFlag = 0 ;     // clear flag 
+			
+			switch (LED_State)
 			{
-				LED_TurnON();
-				flag = 0;
+				case LED_ON :
+				if ( Seconds_counter % T_ON_Seconds == 0  )  // T ON elapsed 
+				{
+					Seconds_counter = 0 ; 
+					LED_TurnOFF();
+					LED_State = LED_OFF ;
+				}
+				
+				break;
+				
+				case LED_OFF :
+					if ( Seconds_counter %  T_OFF_Seconds == 0 ) // T OFF Elapsed 
+					{
+						Seconds_counter = 0 ;
+						LED_TurnON();
+						LED_State = LED_ON ;
+					}
+				break;
 			}
-			else 
-			{
-				LED_TurnOFF();
-				flag = 1;
-			}
+		
 		}
+	
 	}
 }

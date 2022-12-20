@@ -10,7 +10,8 @@
 #define SYSTICK_INTERRUPT_ENABLED   ((uint8_t)1)
 #define SYSTICK_SYSTEM_CLOCK        ((uint8_t)2)
 
-
+extern uint8_t SYSTICK_TimeElapsedFlag  ; 
+extern uint32_t Seconds_counter ;
 
 void SYSTICK_Init(void) ; 
 void SYSTICK_DeInit(void) ;
@@ -23,6 +24,7 @@ uint32_t SYSTICK_GetCurrentValue(void);
 void SYSTICK_Start(void);
 void SYSTICK_Stop(void) ;
 void SYSTICK_SETCallBack(void (*pfn) (void));
+void SYSTICK_ReloadSeconds( uint8_t T_ON_Seconds);
 
 
 

@@ -11,17 +11,19 @@
 
 void vidProcessButtons(void) ;
 
-void delay_ms(int milli)
+typedef enum
 {
-	for (int i = 0; i < milli; i++)
-	{
-		for (int j = 0; j < 3118; j++)
-		{
-		
-		}
-	}
-}
+	USER_IN_IDLE = 0 ,
+	USER_IN_T_ON  ,
+	USER_IN_T_OFF 
+	
+}Time_USER_IN_t ;
 
+static Time_USER_IN_t Time_UserSet  = USER_IN_IDLE ;
+static uint8_t USER_IN_Seconds = 0 ;
+
+uint8_t T_ON_Seconds = 0 ;
+uint8_t T_OFF_Seconds = 0 ;
 
 void SW1_Init(void)
 {
@@ -102,11 +104,28 @@ void vidProcessButtons(void)
 	if (GPIO_u8GetInterruptStatus(GPIO_PORTF,GPIO_PIN0) == 1)
 	{
 		GPIO_ClearInterrupt(GPIO_PORTF,GPIO_PIN0);
+		USER_IN_Seconds ++ ;
 	}
 	/*Checking the MIS register*/
 	else if (GPIO_u8GetInterruptStatus(GPIO_PORTF,GPIO_PIN4) == 1)
 	{
 		GPIO_ClearInterrupt(GPIO_PORTF,GPIO_PIN4);
+		switch (Time_UserSet)
+		{
+			case USER_IN_IDLE :
+			case USER_IN_T_ON :
+				T_ON_Seconds = USER_IN_Seconds ; 
+				USER_IN_Seconds = 0 ; 
+			  Time_UserSet = USER_IN_T_OFF ;
+			break; 
+			
+			case USER_IN_T_OFF :
+			  T_OFF_Seconds = USER_IN_Seconds ; 
+		  	USER_IN_Seconds = 0 ; 
+		  	Time_UserSet = USER_IN_T_ON ;
+			break; 
+			
+		}
 	}
 
 }

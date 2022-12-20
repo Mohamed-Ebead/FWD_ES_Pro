@@ -3,19 +3,9 @@
 
 #include "STD_TYPES.h"
 
-typedef struct
-{
-	uint8_t Copy_PortID;
-	uint8_t Copy_PinNum;
-}ButtonConfig_t;
 
-typedef enum {
-BUTTON_UP, BUTTON_DOWN, BUTTON_PRESSED, BUTTON_RELEASED
-}ButtonState_t;
-void delay_ms(int milli);
-ButtonState_t Button_u8GetButtonDebounced(ButtonConfig_t * buttonConfig,
-	ButtonState_t buttonState);
-
+extern uint8_t T_ON_Seconds  ;
+extern uint8_t T_OFF_Seconds ;
 
 void SW1_Init(void) ; 
 void SW2_Init(void) ; 
